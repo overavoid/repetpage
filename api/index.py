@@ -825,7 +825,7 @@ HTML_TEMPLATE = '''
 
             const paymentDate = isPaid ? (document.getElementById('payment-date') ? document.getElementById('payment-date').value : getTodayDate()) : '';
 
-            fetch('/update', {
+            fetch('/api/update', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -859,7 +859,7 @@ HTML_TEMPLATE = '''
                 }
             }
 
-            fetch('/update', {
+            fetch('/api/update', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -885,7 +885,7 @@ HTML_TEMPLATE = '''
             if (!selectedDate) return;
 
             if (confirm('Удалить отметку о занятии и всю финансовую информацию?')) {
-                fetch('/update', {
+                fetch('/api/update', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -1059,3 +1059,4 @@ if __name__ == '__main__':
         save_data({})
 
     app.run(debug=True, host='0.0.0.0', port=5000)
+
